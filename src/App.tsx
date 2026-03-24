@@ -393,30 +393,54 @@ export default function App() {
           </motion.div>
 
           <div className="relative aspect-square rounded-full overflow-hidden border border-[#2c241b]/5 shadow-inner group">
-            <iframe 
-              width="100%" 
-              height="100%" 
-              frameBorder="0" 
-              style={{ border: 0 }}
-              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY || ''}&q=제주특별자치도+제주시+무근성7길+16-8`}
-              allowFullScreen
-              title="Google Map"
-              className="grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 scale-110"
-            ></iframe>
-            {!process.env.GOOGLE_MAPS_API_KEY && (
-              <div className="absolute inset-0 flex items-center justify-center bg-[#f5f2ed]/80 backdrop-blur-sm">
-                <div className="text-center p-8">
-                  <MapPin className="mx-auto mb-6 text-[#8b5a2b]" size={40} />
+            {lang === 'ko' ? (
+              <div className="absolute inset-0 flex items-center justify-center bg-[#2c241b]">
+                <img 
+                  src="https://picsum.photos/seed/jeju-map-vintage/800/800" 
+                  alt="Map Placeholder" 
+                  className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:scale-110 group-hover:opacity-30 transition-all duration-1000"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="relative z-10 text-center p-8 flex flex-col items-center justify-center transition-all duration-500">
+                  <MapPin className="mb-6 text-[#8b5a2b]" size={40} />
                   <a 
-                    href={`https://www.google.com/maps/search/?api=1&query=제주특별자치도+제주시+무근성7길+16-8`}
+                    href="https://map.naver.com/p/entry/place/2063559700"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] uppercase tracking-[0.4em] font-bold text-[#8b5a2b] border-b border-[#8b5a2b]/30 pb-1 hover:border-[#8b5a2b] transition-all"
+                    className="flex items-center gap-3 text-xs tracking-[0.2em] font-bold text-[#f5f2ed] bg-[#03c75a] px-8 py-4 rounded-full hover:bg-[#02b350] transition-colors shadow-lg"
                   >
-                    Open in Maps
+                    네이버 지도로 길찾기
                   </a>
                 </div>
               </div>
+            ) : (
+              <>
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0" 
+                  style={{ border: 0 }}
+                  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY || ''}&q=제주특별자치도+제주시+무근성7길+16-8`}
+                  allowFullScreen
+                  title="Google Map"
+                  className="grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 scale-110"
+                ></iframe>
+                {!process.env.GOOGLE_MAPS_API_KEY && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-[#f5f2ed]/80 backdrop-blur-sm">
+                    <div className="text-center p-8">
+                      <MapPin className="mx-auto mb-6 text-[#8b5a2b]" size={40} />
+                      <a 
+                        href={`https://www.google.com/maps/search/?api=1&query=제주특별자치도+제주시+무근성7길+16-8`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] uppercase tracking-[0.4em] font-bold text-[#8b5a2b] border-b border-[#8b5a2b]/30 pb-1 hover:border-[#8b5a2b] transition-all"
+                      >
+                        Open in Maps
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>
