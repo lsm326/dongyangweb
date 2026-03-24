@@ -239,10 +239,13 @@ export default function App() {
         >
           <div className="absolute inset-0 bg-[#1a1a1a]/20 z-10" />
           <img 
-            src="https://picsum.photos/seed/jeju-inn-exterior/1920/1080" 
+            src="/main-image.jpg" 
             alt="동양여관 전경" 
             className="w-full h-full object-cover scale-110"
-            referrerPolicy="no-referrer"
+            onError={(e) => {
+              // Fallback to placeholder if the user hasn't uploaded the image yet
+              e.currentTarget.src = "https://picsum.photos/seed/jeju-inn-exterior/1920/1080";
+            }}
           />
         </motion.div>
         
