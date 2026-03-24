@@ -313,7 +313,7 @@ export default function App() {
               className="absolute bottom-0 left-0 w-4/5 h-4/5 z-10 shadow-2xl overflow-hidden rounded-sm"
             >
               <img 
-                src="https://images.unsplash.com/photo-1590273466070-40c466b4432d?auto=format&fit=crop&q=80&w=800&h=1066" 
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20260324_253%2F17743234861836GO6x_PNG%2FScreenshot_2026-03-24_at_12.21.30PM.png" 
                 alt="여관 내부" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
