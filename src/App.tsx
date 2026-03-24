@@ -343,7 +343,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
             {[
               { title: t.roomTitle, desc: t.roomDesc, url: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20251109_79%2F17626718346879lAHK_JPEG%2FKakaoTalk_20251109_160230170_01.jpg" },
-              { title: t.commonTitle, desc: t.commonDesc, url: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20251109_145%2F1762671821551txPBw_JPEG%2FKakaoTalk_20251109_160230170.jpg" },
+              { title: t.commonTitle, desc: t.commonDesc, url: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTEyMTlfMjEw%2FMDAxNzY2MTI2NjQ5MDEy.ScyiSpVqXFzfxRaQOSrvWLz3jOVlzMUelL6AttPobxkg.xpYmqKQ8eMu_iqEnooqY9LrdKCoqNUyRL1Fo7MfVcbwg.JPEG%2FIMG_2981.jpg" },
               { title: t.infoTitle, desc: t.infoDesc, url: "https://images.unsplash.com/photo-1505673542670-a5e3ff5b14a3?auto=format&fit=crop&q=80&w=800&h=1000" }
             ].map((item, idx) => (
               <motion.div 
