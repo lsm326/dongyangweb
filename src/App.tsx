@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { MapPin, Phone, Instagram, Clock, Globe, ChevronRight, Calendar } from 'lucide-react';
-import mainImage from './main-image.JPG';
 
 const translations = {
   ko: {
@@ -240,7 +239,7 @@ export default function App() {
         >
           <div className="absolute inset-0 bg-[#1a1a1a]/20 z-10" />
           <img 
-            src={mainImage} 
+            src="/main-image.jpg" 
             alt="동양여관 전경" 
             className="w-full h-full object-cover object-center scale-110"
             onError={(e) => {
