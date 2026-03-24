@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
-import { MapPin, Phone, Instagram, Clock, Globe, ChevronRight } from 'lucide-react';
+import { MapPin, Phone, Instagram, Clock, Globe, ChevronRight, Calendar } from 'lucide-react';
+import mainImage from './main-image.JPG';
 
 const translations = {
   ko: {
@@ -239,11 +240,11 @@ export default function App() {
         >
           <div className="absolute inset-0 bg-[#1a1a1a]/20 z-10" />
           <img 
-            src="/main-image.jpg" 
+            src={mainImage} 
             alt="동양여관 전경" 
-            className="w-full h-full object-cover scale-110"
+            className="w-full h-full object-cover object-center scale-110"
             onError={(e) => {
-              // Fallback to placeholder if the user hasn't uploaded the image yet
+              // Fallback to placeholder if the image fails to load
               e.currentTarget.src = "https://picsum.photos/seed/jeju-inn-exterior/1920/1080";
             }}
           />
@@ -296,8 +297,8 @@ export default function App() {
               className="absolute top-0 right-0 w-4/5 h-4/5 z-0 grayscale opacity-20"
             >
               <img 
-                src="https://picsum.photos/seed/vintage-wood-texture/800/1000" 
-                alt="Detail" 
+                src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=80&w=800&h=1000" 
+                alt="Jeju Nature" 
                 className="w-full h-full object-cover rounded-sm"
                 referrerPolicy="no-referrer"
               />
@@ -312,7 +313,7 @@ export default function App() {
               className="absolute bottom-0 left-0 w-4/5 h-4/5 z-10 shadow-2xl overflow-hidden rounded-sm"
             >
               <img 
-                src="https://picsum.photos/seed/jeju-traditional-room/800/1066" 
+                src="https://images.unsplash.com/photo-1590273466070-40c466b4432d?auto=format&fit=crop&q=80&w=800&h=1066" 
                 alt="여관 내부" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -341,9 +342,9 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
             {[
-              { title: t.roomTitle, desc: t.roomDesc, seed: "minimal-bedroom-warm" },
-              { title: t.commonTitle, desc: t.commonDesc, seed: "modern-vintage-living" },
-              { title: t.infoTitle, desc: t.infoDesc, seed: "jeju-stone-wall" }
+              { title: t.roomTitle, desc: t.roomDesc, url: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800&h=1000" },
+              { title: t.commonTitle, desc: t.commonDesc, url: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800&h=1000" },
+              { title: t.infoTitle, desc: t.infoDesc, url: "https://images.unsplash.com/photo-1505673542670-a5e3ff5b14a3?auto=format&fit=crop&q=80&w=800&h=1000" }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -354,7 +355,7 @@ export default function App() {
                 className="group relative aspect-[4/5] overflow-hidden bg-[#2c241b] p-12 flex flex-col justify-end"
               >
                 <img 
-                  src={`https://picsum.photos/seed/${item.seed}/800/1000`} 
+                  src={item.url} 
                   alt={item.title} 
                   className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-1000"
                   referrerPolicy="no-referrer"
